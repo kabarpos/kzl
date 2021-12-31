@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drip Sender - Platform Otomatisasi Marketing</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <script src="//unpkg.com/alpinejs" defer></script> 
+    <script src="https://tailwind.maxgrabb.com/js/components-v2.js" ></script>
+
+  
+</head>
+<body>
+<!--HERO-->
+<div class="min-h-screen">
+    <div class="relative overflow-hidden">
+        <header x-data="{ open: false }" class="relative">
+            <div class="bg-gray-900 pt-6">
+            <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 m-auto" aria-label="Global">
+            <div class="flex items-center flex-1">
+            <div class="flex items-center justify-between w-full md:w-auto">
+            <a href="#">
+            <span class="sr-only">Workflow</span>
+            <img class="h-8 w-auto sm:h-10" src="/public/assets/image/logo.png" alt="">
+            </a>
+            <div class="-mr-2 flex items-center md:hidden">
+            <button @click="open = true" type="button" class="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white" id="main-menu" aria-haspopup="true" x-bind:aria-expanded="open"><span class="sr-only">Open main menu</span>
+            <!-- Heroicon name: outline/menu -->
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            </button>
+            </div>
+            </div>
+            <div class="hidden space-x-8 md:flex md:ml-10">
+            <a href="#fitur" class="text-base font-medium text-white hover:text-gray-300">Fitur</a>
+            <a href="#integrasi" class="text-base font-medium text-white hover:text-gray-300">Integrasi</a>
+            <a href="#harga" class="text-base font-medium text-white hover:text-gray-300">Harga</a>
+            <a href="#perbandingan" class="text-base font-medium text-white hover:text-gray-300">Perbandingan</a>
+            <a href="https://docs.dripsender.id/" class="text-base font-medium text-white hover:text-gray-300">Dokumentasi</a>
+
+            </div>
+            </div>
+            <div class="hidden md:flex md:items-center md:space-x-6">
+            <a href="#" class="text-base font-medium text-white hover:text-gray-300">
+            Log in
+            </a>
+            <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-green-500">
+            Start free trial
+            </a>
+            </div>
+            </nav>
+            </div>
+            
+            <transition enter-active-class="duration-150 ease-out" enter-class="opacity-0 scale-95" enter-to-class="opacity-100 scale-100" leave-active-class="duration-100 ease-in" leave-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95"><div x-show="open" x-description="Mobile menu, show/hide based on menu open state." class="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden" style="display: none;">
+            
+            <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden">
+            <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+            <div class="px-5 pt-4 flex items-center justify-between">
+            <div>
+            <img class="h-8 w-auto" src="/public/assets/image/logo.png" alt="">
+            </div>
+            <div class="-mr-2">
+            <button @click="open = false" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
+            <span class="sr-only">Close menu</span>
+            <!-- Heroicon name: outline/x -->
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            </button>
+            </div>
+            </div>
+            <div class="pt-5 pb-6">
+            <div class="px-2 space-y-1">
+            <a href="#fitur" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Fitur</a>
+            <a href="#integrasi" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Integrasi</a>
+            <a href="#harga" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Harga</a>
+            <a href="#perbandingan" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Perbandingan</a>
+            <a href="https://docs.dripsender.id/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Dokumentasi</a>
+            </div>
+            <div class="mt-6 px-5">
+            <a href="#" class="block text-center w-full py-3 px-4 rounded-md shadow bg-green-600 text-white font-medium hover:bg-green-500">Start free trial</a>
+            </div>
+            <div class="mt-6 px-5">
+            <p class="text-center text-base font-medium text-gray-500">Existing customer? <a href="#" class="text-gray-900 hover:underline">Login</a></p>
+            </div>
+            </div>
+            </div>
+            </div>
+            </header>
+      <main>
+        <div class="pt-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
+          <div class="mx-auto max-w-7xl lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+              <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
+                <div class="lg:py-24">
+                    <h1 class="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6l lg:mt-6 xl:text-6xl">
+                    <span class="block">Kirim Pesan WA</span>
+                    <span class="text-green-400">Otomatis</span> Kepada
+                    <span class="block">Pelangganmu</span>
+
+                  </h1>
+                  <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+Mau sambungin aplikasimu dengan WhatsApp API? Integrasikan sekarang juga dengan dripsender.id!
+                  </p>
+                  <div class="mt-10 sm:mt-12">
+                      <a class="block w-full py-3 px-5 text-center bg-green-600 border border-transparent rounded-md shadow-md text-base font-medium text-white hover:bg-green-500 sm:inline-block sm:w-auto" href="#">DAFTAR GRATIS</a>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
+                <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
+                  <!-- Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ -->
+                  <img class="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none" src="https://tailwindui.com/img/component-images/cloud-illustration-indigo-400.svg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- More main page content here... -->
+      </main>
+    </div>
+</div>
+
+<!--EASY-->
+<div class="relative bg-white pt-16 pb-32 overflow-hidden">
+    <div class="relative">
+      <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+          </div>
+    </div>
+    <div class="mt-0">
+      <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+        <div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
+          <div>
+            <div>
+              
+            </div>
+            <div class="mt-6">
+              <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">
+                Mudahnya Dripsender, Anda Cukup Scan QR dan klik klik doang!
+              </h2>
+              <p class="mt-4 text-lg text-gray-500">
+                Dripsender diciptakan dengan interface yang simple, mudah digunakan siapapun. Kamu bisa mengirim pesan text, video, gambar, file, dll secara otomatis, tanpa dipusingkan dengan interface yang rumit!
+              </p>
+              <div class="mt-6">
+                <a href="#" class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-500">
+                  Lihat Fitur
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+          <div class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+            <img class="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none" src="/public/assets/image/scan.jpg" alt="Customer profile user interface">
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!--FEATURE--><div id="fitur"></div>
+<div class="relative bg-white py-16 sm:py-24 lg:py-32 lg:px-16">
+    <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+      <h2 class="text-base font-semibold tracking-wider text-green-600 uppercase">Otomatisasi Bisnismu</h2>
+      <p class="text-3xl text-center font-extrabold text-gray-900 sm:text-5xl sm:leading-none sm:tracking-tight lg:text-6xl">
+        Mengapa Pilih Dripsender?
+      </p>
+      <p class="mt-5 max-w-prose mx-auto text-xl text-gray-500">
+        Banyak alasannya, namun cukup dengan 6 alasan ini saja kamu harus menggunakan Dripsender 
+      </p>
+      <div class="mt-12">
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-green-500 rounded-md shadow-lg">
+                    <!-- Heroicon name: outline/cloud-upload -->
+                    <svg class="h-20 w-20 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">True Unlimited</h3>
+                <p class="mt-5 text-base text-gray-500">Berapapun pesan yang kamu kirim, harga flat alias tetap sama</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-green-500 rounded-md shadow-lg">
+                    <!-- Heroicon name: outline/lock-closed -->
+                    <svg class="h-20 w-20 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Banyak Aplikasi terintegrasi</h3>
+                <p class="mt-5 text-base text-gray-500">Kami akan terus melengkapi integrasi dripsender dengan pihak ketiga</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-green-500 rounded-md shadow-lg">
+                    <!-- Heroicon name: outline/refresh -->
+                    <svg class="h-20 w-20 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Paralel Whatsapp</h3>
+                <p class="mt-5 text-base text-gray-500">1 Nomor Whatsapp kamu bisa diakses oleh multiuser. berguna jika kamu punya banyak CS. 1 Whatsapp bisa digunakan oleh 3-10 orang CS sekaligus                </p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-green-500 rounded-md shadow-lg">
+                    <!-- Heroicon name: outline/shield-check -->
+                    <svg class="h-20 w-20 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Low Overheat System</h3>
+                <p class="mt-5 text-base text-gray-500">
+                    menghasilkan request yang ringan, zero down, dan harga yang terjangkau                </p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-green-500 rounded-md shadow-lg">
+                    <!-- Heroicon name: outline/cog -->
+                    <svg class="h-20 w-20 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Powerful API</h3>
+                <p class="mt-5 text-base text-gray-500">latency waktu request kirim pesan cuma 33ms</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-green-500 rounded-md shadow-lg">
+                    <!-- Heroicon name: outline/server -->
+                    <svg class="h-20 w-20 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Harga Terbaik</h3>
+                <p class="mt-5 text-base text-gray-500">No debatable, harga terbaik dikelasnya. silakan compare</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
+<!--TESTIMONIAL-->
+<div class="relative bg-green-50 p-16 overflow-hidden sm:p-24 lg:p-20">
+    <div class="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
+      <div>
+        <h2 class="text-3xl text-center font-extrabold text-gray-900 sm:text-5xl sm:leading-none sm:tracking-tight lg:text-6xl">
+          Kata Mereka...
+        </h2>
+        <p class="mt-3 text-xl text-gray-500 sm:mt-4 text-center">
+        Banyak orang yang telah merasakan kemudahan dalam bisnisnya setelah memakai Dripsender        </p>
+      </div>
+      <div class="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-12">
+        <div>
+          <div>
+            <a href="#" class="inline-block">
+              <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                Testimoni
+              </span>
+            </a>
+          </div>
+          <a href="#" class="block mt-4">
+            <p class="text-xl font-semibold text-gray-900">
+              Bisnisku jadi lancar gegara Dripsender
+            </p>
+            <p class="mt-3 text-base text-gray-500">
+              Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.
+            </p>
+          </a>
+          <div class="mt-6 flex items-center">
+            <div class="flex-shrink-0">
+              <a href="#">
+                <span class="sr-only">Mas Paul</span>
+                <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixqx=7qwKjEp7Xv&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+              </a>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm font-medium text-gray-900">
+                <a href="#">
+                  Mas Paul
+                </a>
+              </p>
+              <div class="flex space-x-1 text-sm text-gray-500">
+                <span>
+                  Detective Conan
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div>
+            <div>
+              <a href="#" class="inline-block">
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                  Testimoni
+                </span>
+              </a>
+            </div>
+            <a href="#" class="block mt-4">
+              <p class="text-xl font-semibold text-gray-900">
+                Bisnisku jadi lancar gegara Dripsender
+              </p>
+              <p class="mt-3 text-base text-gray-500">
+                Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.
+              </p>
+            </a>
+            <div class="mt-6 flex items-center">
+              <div class="flex-shrink-0">
+                <a href="#">
+                  <span class="sr-only">Mas Paul</span>
+                  <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixqx=7qwKjEp7Xv&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </a>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm font-medium text-gray-900">
+                  <a href="#">
+                    Mas Paul
+                  </a>
+                </p>
+                <div class="flex space-x-1 text-sm text-gray-500">
+                  <span>
+                    Detective Conan
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div>
+            <div>
+              <a href="#" class="inline-block">
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                  Testimoni
+                </span>
+              </a>
+            </div>
+            <a href="#" class="block mt-4">
+              <p class="text-xl font-semibold text-gray-900">
+                Bisnisku jadi lancar gegara Dripsender
+              </p>
+              <p class="mt-3 text-base text-gray-500">
+                Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.
+              </p>
+            </a>
+            <div class="mt-6 flex items-center">
+              <div class="flex-shrink-0">
+                <a href="#">
+                  <span class="sr-only">Mas Paul</span>
+                  <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixqx=7qwKjEp7Xv&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </a>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm font-medium text-gray-900">
+                  <a href="#">
+                    Mas Paul
+                  </a>
+                </p>
+                <div class="flex space-x-1 text-sm text-gray-500">
+                  <span>
+                    Detective Conan
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+    </div>
+</div>
+  
+<!--BLOG LIST--><div id="integrasi"></div>
+<div class="relative bg-white pt-16 pb-20 px-8 sm:px-6 lg:pt-24 lg:pb-28 lg:px-20">
+
+    <div class="relative max-w-7xl mx-auto">
+      <div class="text-center">
+        <h2 class="text-3xl text-center font-extrabold text-gray-900 sm:text-5xl sm:leading-none sm:tracking-tight lg:text-6xl">
+          Integrasi Dripsender
+        </h2>
+        <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+            Dripsender semakin memudahkan Anda karena telah terintegrasi dengan berbagai aplikasi yang sering digunakan
+        </p>
+      </div>
+
+
+ <!--KOLOM-->
+ <div class="pt-16 pb-8 py-8">
+    <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+   
+       <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+           <div class="flex-1 flex flex-col p-8">
+               <img class="w-32 h-32 flex-shrink-0 mx-auto bg-black rounded-full" src="/public/assets/image/api.jpg" alt="">
+               <h3 class="mt-6 text-gray-900 font-extrabold">Integrasi API </h3>
+               <dl class="mt-1 flex-grow flex flex-col justify-between">
+                 <dt class="sr-only">Title</dt>
+                 <dd class="text-gray-500 text-sm">Untuk developer, tersedia untuk menghubungkan API Dripsender dengan aplikasi kamu</dd>
+               </dl>
+           </div>    
+           </li>
+         
+           <!-- More people... -->
+
+   <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+       <div class="flex-1 flex flex-col p-8">
+           <img class="w-32 h-32 flex-shrink-0 mx-auto bg-black rounded-full" src="/public/assets/image/sjl.jpg" alt="">
+           <h3 class="mt-6 text-gray-900 font-extrabold">Sejoli Membership</h3>
+           <dl class="mt-1 flex-grow flex flex-col justify-between">
+             <dt class="sr-only">Title</dt>
+             <dd class="text-gray-500 text-sm">Pakai plugin Sejoli? Dripsender bisa diintegrasikan dengan plugin Sejoli Membership</dd>
+           </dl>
+       </div>    
+       </li>
+     
+       <!-- More people... -->
+
+   <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+       <div class="flex-1 flex flex-col p-8">
+           <img class="w-32 h-32 flex-shrink-0 mx-auto bg-black rounded-full" src="/public/assets/image/max.jpg" alt="">
+           <h3 class="mt-6 text-gray-900 font-extrabold">Maxgrabb</h3>
+           <dl class="mt-1 flex-grow flex flex-col justify-between">
+             <dt class="sr-only">Title</dt>
+             <dd class="text-gray-500 text-sm">Dripsender + Maxgrabb adalah kombinasi yang bisa membuat bisnis Anda 3x lebih mudah</dd>
+           </dl>
+       </div>    
+       </li>
+     
+       <!-- More people... -->
+
+   <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+   <div class="flex-1 flex flex-col p-8">
+       <img class="w-32 h-32 flex-shrink-0 mx-auto bg-black rounded-full" src="/public/assets/image/woo.jpg" alt="">
+       <h3 class="mt-6 text-gray-900 font-extrabold">Woo Commerce</h3>
+       <dl class="mt-1 flex-grow flex flex-col justify-between">
+         <dt class="sr-only">Title</dt>
+         <dd class="text-gray-500 text-sm">Toko Online Woocommerce bisa diintegrasi dengan plugin Dripsender</dd>
+         <dt class="sr-only">Role</dt>
+       </dl>
+   </div>    
+   </li>
+ 
+   </ul>
+   </div>
+     <!--COLUMN 2 -->
+    <div class="pt-0 pb-16 py-8">
+     <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    
+        <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+            <div class="flex-1 flex flex-col p-8">
+                <img class="w-32 h-32 flex-shrink-0 mx-auto bg-black rounded-full" src="/public/assets/image/gform.jpg" alt="">
+                <h3 class="mt-6 text-gray-900 font-extrabold">Google Form</h3>
+                <dl class="mt-1 flex-grow flex flex-col justify-between">
+                  <dt class="sr-only">Title</dt>
+                  <dd class="text-gray-500 text-sm">Form gratis dari Google ini bisa dikolaborasikan dengan Dripsender</dd>
+                </dl>
+            </div>    
+            </li>
+          
+            <!-- More people... -->
+
+    <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+        <div class="flex-1 flex flex-col p-8">
+            <img class="w-32 h-32 flex-shrink-0 mx-auto bg-black rounded-full" src="/public/assets/image/ninja.jpg" alt="">
+            <h3 class="mt-6 text-gray-900 font-extrabold">Ninja Form</h3>
+            <dl class="mt-1 flex-grow flex flex-col justify-between">
+              <dt class="sr-only">Title</dt>
+              <dd class="text-gray-500 text-sm">Dripsender bisa diintegrasikan langsung dengan Plugin Wordpress Ninja Form</dd>
+            </dl>
+        </div>    
+        </li>
+      
+        <!-- More people... -->
+
+    <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+        <div class="flex-1 flex flex-col p-8">
+            <img class="w-32 h-32 flex-shrink-0 mx-auto bg-black rounded-full" src="/public/assets/image/cf7.jpg" alt="">
+            <h3 class="mt-6 text-gray-900 font-extrabold">Contact Form 7</h3>
+            <dl class="mt-1 flex-grow flex flex-col justify-between">
+              <dt class="sr-only">Title</dt>
+              <dd class="text-gray-500 text-sm">Dripsender bisa diintegrasikan langsung dengan Plugin Wordpress Contact Form 7</dd>
+            </dl>
+        </div>    
+        </li>
+      
+        <!-- More people... -->
+
+    <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+    <div class="flex-1 flex flex-col p-8">
+        <img class="w-32 h-32 flex-shrink-0 mx-auto bg-black rounded-full" src="/public/assets/image/ele.jpg" alt="">
+        <h3 class="mt-6 text-gray-900 font-extrabold">Elementor Pro</h3>
+        <dl class="mt-1 flex-grow flex flex-col justify-between">
+          <dt class="sr-only">Title</dt>
+          <dd class="text-gray-500 text-sm">Bisa dipakai di Elementor Page Builder khususnya Form / Contact Widget</dd>
+          <dt class="sr-only">Role</dt>
+        </dl>
+    </div>    
+    </li>
+  
+    </ul>
+    </div>
+    </div>
+
+    <p class="max-w-xl mt-5 mx-auto text-xl text-gray-500">*Dokumentasi dan integrasi Dripsender bisa Anda baca <span class="text-green-400 underline"><a href="https://docs.dripsender.id/">di sini</a></span></p>
+
+</div>
+
+<!--PRICING--><div id="harga"></div>
+<div class="relative bg-green-50 p-16 overflow-hidden sm:p-24 lg:p-20">
+    <h2 class="text-3xl text-center font-extrabold text-gray-900 sm:text-5xl sm:leading-none sm:tracking-tight lg:text-6xl">Harga Layanan</h2>
+    <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4 text-center">
+      Pilih paket yang sesuai dengan kebutuhan bisnis Anda. Dripsender menawarkan harga termurah!
+  </p>  
+    <!-- Tiers -->
+    <div class="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
+      <div class="relative p-8 bg-white border border-gray-200 rounded-2xl shadow-sm flex flex-col">
+        <div class="flex-1">
+          <h3 class="text-xl font-semibold text-gray-900">Freelancer</h3>
+          <p class="mt-4 flex items-baseline text-gray-900">
+            <span class="text-5xl font-extrabold tracking-tight">$24</span>
+            <span class="ml-1 text-xl font-semibold">/month</span>
+          </p>
+          <p class="mt-6 text-gray-500">The essentials to provide your best work for clients.</p>
+  
+          <!-- Feature list -->
+          <ul role="list" class="mt-6 space-y-6">
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">5 products</span>
+            </li>
+  
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">Up to 1,000 subscribers</span>
+            </li>
+  
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">Basic analytics</span>
+            </li>
+  
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">48-hour support response time</span>
+            </li>
+          </ul>
+        </div>
+  
+        <a href="#" class="bg-green-50 text-green-700 hover:bg-green-100 mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium">Daftar Sekarang</a>
+      </div>
+  
+      <div class="relative p-8 bg-white border border-gray-200 rounded-2xl shadow-sm flex flex-col">
+        <div class="flex-1">
+          <h3 class="text-xl font-semibold text-gray-900">Startup</h3>
+  
+          <p class="absolute top-0 py-1.5 px-4 bg-green-500 rounded-full text-xs font-semibold uppercase tracking-wide text-white transform -translate-y-1/2">Pilihan Terbaik</p>
+          <p class="mt-4 flex items-baseline text-gray-900">
+            <span class="text-5xl font-extrabold tracking-tight">$32</span>
+            <span class="ml-1 text-xl font-semibold">/month</span>
+          </p>
+          <p class="mt-6 text-gray-500">A plan that scales with your rapidly growing business.</p>
+  
+          <!-- Feature list -->
+          <ul role="list" class="mt-6 space-y-6">
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">25 products</span>
+            </li>
+  
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">Up to 10,000 subscribers</span>
+            </li>
+  
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">Advanced analytics</span>
+            </li>
+  
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">24-hour support response time</span>
+            </li>
+  
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">Marketing automations</span>
+            </li>
+          </ul>
+        </div>
+  
+        <a href="#" class="bg-green-700 text-gray-200 hover:bg-green-600 mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium">Daftar Sekarang</a>
+      </div>
+  
+      <div class="relative p-8 bg-white border border-gray-200 rounded-2xl shadow-sm flex flex-col">
+        <div class="flex-1">
+          <h3 class="text-xl font-semibold text-gray-900">Enterprise</h3>
+          <p class="mt-4 flex items-baseline text-gray-900">
+            <span class="text-5xl font-extrabold tracking-tight">$48</span>
+            <span class="ml-1 text-xl font-semibold">/month</span>
+          </p>
+          <p class="mt-6 text-gray-500">Dedicated support and infrastructure for your company.</p>
+  
+          <!-- Feature list -->
+          <ul role="list" class="mt-6 space-y-6">
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">Unlimited products</span>
+            </li>
+  
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">Unlimited subscribers</span>
+            </li>
+  
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">Advanced analytics</span>
+            </li>
+  
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">1-hour, dedicated support response time</span>
+            </li>
+  
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">Marketing automations</span>
+            </li>
+  
+            <li class="flex">
+              <!-- Heroicon name: outline/check -->
+              <svg class="flex-shrink-0 w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="ml-3 text-gray-500">Custom integrations</span>
+            </li>
+          </ul>
+        </div>
+  
+        <a href="#" class="bg-green-50 text-green-700 hover:bg-green-100 mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium">Daftar Sekarang</a>
+      </div>
+    </div>
+</div>
+  
+<!--COMPARE--><div id="perbandingan"></div>
+<section class="text-gray-600 body-font m-0">
+
+  <div class="relative max-w-2xl mx-auto pt-16 px-4 text-center sm:pt-32 sm:px-6 lg:max-w-7xl lg:px-8">
+    <h1 class="text-4xl font-extrabold tracking-tight   sm:text-5xl">
+      <span class="block lg:inline">Dripsender vs Kompetitor</span> 
+    </h1>
+    <p class="mt-4 text-xl text-grey-600">Lihat bagaimana Dripsender dibandingkan platform lain</p>
+  </div>
+  <div class="container px-5 py-10 mx-auto overflow-auto">
+        
+<table class="w-11/12	table p-4 bg-white shadow rounded-lg m-auto">
+  <thead>
+      <tr>
+          <th class="border p-4 dark:border-dark-5 whitespace-nowrap text-gray-600 font-extrabold text-left bg-gray-100">
+              FITUR LAYANAN</th>
+          <th class="border p-4 dark:border-dark-5 whitespace-nowrap font-normal bg-green-600 text-gray-700">
+              <img class="lg:h-8 w-auto sm:h-3 sm:w-auto m-auto" src="/public/assets/image/logocil.png" alt=""></th>
+          <th class="border p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900">
+            <img class="lg:h-8 w-auto sm:h-3 sm:w-auto m-auto" src="/public/assets/image/qontak-logo.png" alt="">
+          </th>
+          <th class="border p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900">
+            <img class="lg:h-8 w-auto sm:h-3 sm:w-auto m-auto" src="/public/assets/image/qiscus.png" alt="">
+          </th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr class="text-gray-700">
+          <td class="border p-4 dark:border-dark-5 font-extrabold">API Official</td>
+          <td class="border p-4 dark:border-dark-5 bg-green-600 text-white text-center">NO</td>
+          <td class="border p-4 dark:border-dark-5 text-center">YES</td>
+          <td class="border p-4 dark:border-dark-5 text-center">YES</td>
+      </tr>
+      <tr class="text-gray-700">
+          <td class="border p-4 dark:border-dark-5 font-extrabold">Regristasi GreenTicks</td>
+          <td class="border p-4 dark:border-dark-5 bg-green-600 text-white text-center">NO</td>
+          <td class="border p-4 dark:border-dark-5 text-center">YES</td>
+          <td class="border p-4 dark:border-dark-5 text-center">YES</td>
+      </tr>
+      <tr class="text-gray-700">
+          <td class="border p-4 dark:border-dark-5 font-extrabold">Jumlah Chatbot Faq</td>
+          <td class="border p-4 dark:border-dark-5 bg-green-600 text-white text-center">Unlimited</td>
+          <td class="border p-4 dark:border-dark-5 text-center">1000</td>
+          <td class="border p-4 dark:border-dark-5 text-center">Undefined</td>
+      </tr>
+      <tr class="text-gray-700">
+          <td class="border p-4 dark:border-dark-5 font-extrabold">Pengguna Aktif Bulanan</td>
+          <td class="border p-4 dark:border-dark-5 bg-green-600 text-white text-center">Unlimited</td>
+          <td class="border p-4 dark:border-dark-5 text-center">1000 </td>
+          <td class="border p-4 dark:border-dark-5 text-center">1000</td>
+      </tr>
+      <tr class="text-gray-700">
+        <td class="border p-4 dark:border-dark-5 font-extrabold">Biaya Langganan</td>
+        <td class="border p-4 dark:border-dark-5 bg-green-600 text-white text-center">Mulai dari 88k/bulan</td>
+        <td class="border p-4 dark:border-dark-5 text-center">IDR 749k / bln</td>
+        <td class="border p-4 dark:border-dark-5 text-center">IDR 750k / bln</td>
+    </tr>
+    <tr class="text-gray-700">
+      <td class="border p-4 dark:border-dark-5 font-extrabold">Tambahan Pengguna Aktif Bulanan</td>
+      <td class="border p-4 dark:border-dark-5 bg-green-600 text-white text-center">Unlimited</td>
+      <td class="border p-4 dark:border-dark-5 text-center">IDR 249k / 500 MAU</td>
+      <td class="border p-4 dark:border-dark-5 text-center">IDR 250k / 500 MAU</td>
+    </tr>
+    <tr class="text-gray-700">
+      <td class="border p-4 dark:border-dark-5 font-extrabold">Blast message</td>
+      <td class="border p-4 dark:border-dark-5 bg-green-600 text-white text-center">Unlimited Free</td>
+      <td class="border p-4 dark:border-dark-5 text-center">IDR 420 / message</td>
+      <td class="border p-4 dark:border-dark-5 text-center">IDR 420 / message</td>
+    </tr>
+   
+
+  </tbody>
+</table>      
+    </div>
+  </section>
+
+<!--CTA-->
+<div class="bg-green-700 mt-16">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-24 lg:px-8 lg:flex lg:items-center lg:justify-between">
+    <h2 class="text-3xl font-extrabold tracking-tight text-white md:text-4xl">
+      <span class="block">SIAP MENCOBA?</span>
+      <span class="block text-white">Segera gunakan Dripsender sekarang..</span>
+    </h2>
+    <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+      <div class="inline-flex rounded-md shadow">
+        <a href="#" class="inline-flex items-center justify-center px-12 py-5 border border-transparent text-xl font-bold rounded-md text-green-800 bg-white hover:bg-green-100">
+          Coba Sekarang!
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--FAQ-->
+<div class="bg-white">
+  <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+    <div class="max-w-2xl lg:mx-auto lg:text-center">
+      <h2 class="text-3xl text-center font-extrabold text-gray-900 sm:text-5xl sm:leading-none sm:tracking-tight lg:text-6xl">
+        F.A.Q
+      </h2>
+      <p class="mt-3 max-w-2xl mx-auto text-xl text-green-800 sm:mt-4 text-center">
+        Pertanyaan yang seringkali ditanyakan
+    </p>     </div>
+    <div class="mt-20">
+      <dl class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-10">
+        <div>
+          <dt class="text-green-700 text-xl font-extrabold underline">
+            Apa itu Dripsender?
+          </dt>
+          <dd class="mt-3 text-gray-500">
+            Dripsender adalah layanan yang memungkinkan untuk membuat WhatsApp Anda menjadi full otomatis dan responsif terhadap chat yang masuk ke nomor Whatsappa Anda
+          </dd>
+        </div>
+        <!-- More questions... -->
+        <div>
+          <dt class="text-green-700 text-xl font-extrabold underline">Apakah Dripsender Bisa Membuat Bot?
+          </dt>
+          <dd class="mt-3 text-gray-500">
+            Bisa! Dripsender telah dilengkapi dengan tools pembuat Bot auto reply yang fleksibel. Dengan Bot dari Dripsender ini Anda tak perlu melakukan chat manual dengan para costumer Anda
+          </dd>
+        </div>
+        <!-- More questions... -->
+        <div>
+          <dt class="text-green-700 text-xl font-extrabold underline">Apakah Aman dari Banned?
+          </dt>
+          <dd class="mt-3 text-gray-500">
+            Pada dasarnya, hal yang membuat nomor WhatsApp diblokir adalah karena adanya aktivitas Spamming dan juga karena laporan orang. Dripsender bisa meminimalisir hal itu.
+          </dd>
+        </div>
+        <!-- More questions... -->
+        <div>
+          <dt class="text-green-700 text-xl font-extrabold underline">Apakah Cocok Untuk Pemula?
+          </dt>
+          <dd class="mt-3 text-gray-500">
+            Dripsender cocok untuk siapapun Anda. Lagipula, kami menyiapkan video-video tutorial maupun dokumentasi cara menggunakan Dripsender
+          </dd>
+        </div>
+        <!-- More questions... -->
+        <div>
+          <dt class="text-green-700 text-xl font-extrabold underline">Apakah Penggunaan Dripsender
+          </dt>
+          <dd class="mt-3 text-gray-500">
+            Dripsender diciptakan bukan untuk menyusahkan orang. Tampilan dashboard / halaman admin kami buat sesederhana mungkin agar mudah dipahami
+          </dd>
+        </div>
+        <!-- More questions... -->
+        <div>
+          <dt class="text-green-700 text-xl font-extrabold underline">Bagaimana Soal Harga?
+          </dt>
+          <dd class="mt-3 text-gray-500">
+            Kami memberikan opsi kepada Anda, bisa memilih layanan secara bulanan, 6 bulanan, dan tahunan. Biaya tersebut adalah untuk merawat, menjaga sistem agar terus berjalan hingga melakukan update fitur ke depannya
+          </dd>
+        </div>
+        <!-- More questions... -->
+      </dl>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--FOOTER-->
+<footer class="bg-green-50">
+  <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+    <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+      <div class="px-5 py-2">
+        <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+          About
+        </a>
+      </div>
+
+      <div class="px-5 py-2">
+        <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+          Blog
+        </a>
+      </div>
+
+      <div class="px-5 py-2">
+        <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+          Pricing
+        </a>
+      </div>
+
+      <div class="px-5 py-2">
+        <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+          Affiliate
+        </a>
+      </div>
+
+      <div class="px-5 py-2">
+        <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+          Document
+        </a>
+    
+    </nav>
+
+    <p class="mt-8 text-center text-base text-gray-400">
+      &copy; 2022 Dripsender - All rights reserved.
+    </p>
+  </div>
+</footer>
+
+  
+
+
+</body>
+</html>
